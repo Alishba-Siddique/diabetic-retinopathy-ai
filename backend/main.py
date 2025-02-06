@@ -1,4 +1,6 @@
 from fastapi import FastAPI, UploadFile
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import io
 import base64
 import cv2
@@ -12,6 +14,25 @@ from backend.model import model  # ✅ Explicitly mention 'backend'
 from backend.gradcam import GradCAM
 
 app = FastAPI()
+
+# Allow CORS for your frontend
+origins = [
+    "http://localhost:3000",  # For local development
+    "https://diabetic-retinopathy-ai.vercel.app",  # Your deployed frontend
+]
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
+
+@app.get("/")
+def read_root():
+    return {"message": "Backend is running!"}
 
 # Define Image Transform
 transform = transforms.Compose([
