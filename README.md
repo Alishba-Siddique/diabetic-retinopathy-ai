@@ -1,6 +1,10 @@
 # Diabetic Retinopathy Detection API with Grad-CAM
 This FastAPI service classifies retinal images and generates Grad-CAM heatmaps for explainability.
 
+You can test: [https://huggingface.co/spaces/Alishba404/detection-of-diabetic-retinopathy](https://huggingface.co/spaces/Alishba404/detection-of-diabetic-retinopathy)
+
+https://github.com/user-attachments/assets/28b58233-a759-42f7-aaa9-105ea4f7fc12
+
 ## 🔹 Features
 ✅ **Predicts Diabetic Retinopathy (DR) from retinal images**  
 ✅ **Uses Grad-CAM for explainability**  
